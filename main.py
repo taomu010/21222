@@ -7,7 +7,7 @@ import sys
 import os
 import http.client, urllib
 import json
-from zhdate import ZhDate
+
 def get_color():
     # 获取随机颜色
     get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
