@@ -288,7 +288,7 @@ if __name__ == "__main__":
     
     # 传入省份和市获取天气信息
     province, city = config["province"], config["city"]
-    weather, max_temperature, min_temperature = get_weather(province, city)
+    weather, highest, lowest = get_weather()
     #获取彩虹屁API
     caihongpi_API=config["caihongpi_API"]
     #获取励志古言API
