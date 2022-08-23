@@ -17,6 +17,7 @@ def get_color():
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
+city = os.environ['CITY']
 
 user_ids = os.environ["USER_ID"].split("\n")
 template_id = os.environ["TEMPLATE_ID"]
