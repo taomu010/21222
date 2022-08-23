@@ -8,6 +8,7 @@ import os
 import http.client, urllib
 import json
 import requests
+import math
 
 def get_color():
     # 获取随机颜色
