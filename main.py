@@ -287,8 +287,7 @@ if __name__ == "__main__":
 
     
     # 传入省份和市获取天气信息
-    province, city = config["province"], config["city"]
-    weather, highest, lowest = get_weather()
+   data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()}}
     #获取彩虹屁API
     caihongpi_API=config["caihongpi_API"]
     #获取励志古言API
