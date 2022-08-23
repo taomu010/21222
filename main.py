@@ -17,11 +17,11 @@ def get_color():
 
 def get_access_token():
     # appId
-  app_id = os.environ["APP_ID"]
+    app_id = config["APP_ID"]
     # appSecret
-   app_secret = os.environ["APP_SECRET"]
+    app_secret = config["APP_SECRET"]
     post_url = ("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}"
-                .format(APP_ID, APP_SECRET))
+                .format(app_id, app_secret))
     try:
         access_token = get(post_url).json()['access_token']
     except KeyError:
@@ -69,7 +69,7 @@ def get_birthday(birthday, year, today):
 def get_weather(province, city):
     # 城市id
     try:
-        city_id = cityinfo.cityInfo[province][city]["AREAID"]
+        city_id = cityinfo.cityInfo[province][CITY]["AREAID"]
     except KeyError:
         print("推送消息失败，请检查省份或城市是否正确")
         os.system("pause")
