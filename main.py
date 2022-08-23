@@ -287,6 +287,7 @@ if __name__ == "__main__":
 
     
     # 传入省份和市获取天气信息
+    wea, temperature, highest, lowest = get_weather()
     data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()}}
     #获取彩虹屁API
     caihongpi_API=config["caihongpi_API"]
