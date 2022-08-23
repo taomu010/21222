@@ -16,6 +16,10 @@ def get_color():
     color_list = get_colors(100)
     return random.choice(color_list)
 
+def get_random_color():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+
+
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
