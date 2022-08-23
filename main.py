@@ -310,7 +310,7 @@ if __name__ == "__main__":
     #星座运势
     lucky_ = lucky()
     # 公众号推送消息
-    for user in users:
+    for user_id in user_ids:
         send_message(user, accessToken, city, weather, max_temperature, min_temperature, pipi, lizhi,pop,tips, note_en, note_ch, health_tip, lucky_)
     import time
     time_duration = 3.5
