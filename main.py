@@ -105,6 +105,19 @@ def caihongpi():
         return ""
 
 #健康小提示API
+def health():
+    if (health_API!="否"):
+        conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
+        params = urllib.parse.urlencode({'key':health_API})
+        headers = {'Content-type':'application/x-www-form-urlencoded'}
+        conn.request('POST','/healthtip/index',params,headers)
+        res = conn.getresponse()
+        data = res.read()
+        data = json.loads(data)
+        data = data["newslist"][0]["content"]
+        return data
+    else:
+        return ""
 
 #星座运势
 def lucky():
@@ -302,6 +315,7 @@ if __name__ == "__main__":
     #彩虹屁
     pipi = caihongpi()
     #健康小提示
+    health_API=config["health_API"]
  
     #下雨概率和建议
     pop,tips = tip()
