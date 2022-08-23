@@ -15,21 +15,11 @@ def get_color():
     return random.choice(color_list)
 
 
-def get_access_token():
-    # appId
-     app_id = config["app_id"]
-    # appSecret
-    app_secret = config["app_secret"]
-    post_url = ("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}"
-                .format(app_id, app_secret))
-    try:
-        access_token = get(post_url).json()['access_token']
-    except KeyError:
-        print("获取access_token失败，请检查app_id和app_secret是否正确")
-        os.system("pause")
-        sys.exit(1)
-    # print(access_token)
-    return access_token
+app_id = os.environ["APP_ID"]
+app_secret = os.environ["APP_SECRET"]
+
+user_ids = os.environ["USER_ID"].split("\n")
+template_id = os.environ["TEMPLATE_ID"]
 
 def get_birthday(birthday, year, today):
     birthday_year = birthday.split("-")[0]
@@ -321,10 +311,7 @@ if __name__ == "__main__":
         os.system("pause")
         sys.exit(1)
 
-    # 获取accessToken
-    accessToken = get_access_token()
-    # 接收的用户
-    users = config["user"]
+    
     # 传入省份和市获取天气信息
     province, city = config["province"], config["city"]
     weather, max_temperature, min_temperature = get_weather(province, city)
